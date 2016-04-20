@@ -6,11 +6,12 @@ aegir_db_host: localhost
 aegir_manage_dependencies: true
 aegir_dependencies:
   - apache2
-  - mysql-client
+#  - mysql-client
   - php5
   - php5-cli
   - php5-gd
   - php5-mysql
+#  - libapache2-mod-php7.0
   - postfix
   - sudo
   - rsync
@@ -21,10 +22,12 @@ aegir_additional_packages:
   - php5-curl
 aegir_provision_repo: http://git.drupal.org/project/provision.git
 aegir_provision_version: 7.x-3.x
-aegir_provision_update: false
+aegir_provision_update: true
 aegir_http_service_type: apache
 aegir_makefile: aegir.make
-aegir_makefile_contents: "{{ lookup('file', aegir_makefile) }}"
+# aegir_makefile_contents: "{{ lookup('file', 'aegir_makefile') }}"
 aegir_platform_version: 7.x-3.x
 aegir_frontend_url: aegir.local
 aegir_generate_keypair: true
+mysql_root_username: root
+mysql_root_password: root

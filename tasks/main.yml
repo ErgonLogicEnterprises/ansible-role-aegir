@@ -60,14 +60,11 @@
 - include: setup-apache.yml
   when: aegir_http_service_type == 'apache'
 
-# Ref.: http://community.aegirproject.org/installing/manual#Sudo_configuration
-- name: Configure sudo for aegir user
-  copy:
-    dest: "/etc/sudoers.d/{{ aegir_user }}"
-    content: "{{ aegir_user }} ALL=NOPASSWD: /usr/sbin/apache2ctl\n{{ aegir_user }} ALL=NOPASSWD: /etc/init.d/nginx\n\n"
-    mode: 0440
-
+## use template for remote, lookup is local only
 - name: Write Hostmaster makefile
+#  template: src=/templates/aegir.make dest="{{ aegir_root }}/aegir.make" owner="{{ aegir_user }}" group="{{ aegir_user }}"
+ - name: Write Hostmaster makefile
+
   copy:
     dest: "{{ aegir_root }}/aegir.make"
     content: "{{ aegir_makefile_contents }}"

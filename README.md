@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ErgonLogicEnterprises/ansible-role-aegir.svg?branch=master)](https://travis-ci.org/ErgonLogicEnterprises/ansible-role-aegir)
 
-Installs Aegir, a control panel for deploying and managing large networks of Drupal sites.
+Installs Aegir, a control panel for deploying and managing large networks of Drupal sites..
 
 ## Requirements
 

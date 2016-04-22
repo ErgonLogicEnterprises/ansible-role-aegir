@@ -31,7 +31,7 @@ install:
 
   # Install required dependencies.
   - ansible-galaxy install http://github.com/geerlingguy/ansible-role-mysql,,geerlingguy.mysql
-  - ansible-galaxy install https://github.com/ErgonLogicEnterprises/ansible-role-drush.git,,getvalkyrie.drush
+  - ansible-galaxy install http://github.com/ErgonLogicEnterprises/ansible-role-drush.git,,getvalkyrie.drush
 
 script:
   # Check the role/playbook's syntax.

@@ -18,6 +18,7 @@ aegir_dependencies:
   - git
   - unzip
   - htop
+  - rsstail
 aegir_install_additional_packages: true
 aegir_additional_packages:
   - php5-curl

@@ -2,6 +2,15 @@
 language: python
 python: "2.7"
 
+language: php
+php:
+  - '5.4'
+  - '5.5'
+  - '5.6'
+  - '7.0'
+  - hhvm
+  - nightly
+
 env:
   - SITE=test.yml
   - ANSIBLE_VERSION=1.6
@@ -9,7 +18,7 @@ env:
   - ANSIBLE_VERSION=1.8
 #  - ANSIBLE_VERSION=1.9 -- why is this broken? Vagrant on Valkyrie wants Ansible 1.9
   - ANSIBLE_VERSION=2.0
-  - ANSIBLE_VERSION=2.0.0.1  
+  - ANSIBLE_VERSION=2.0.0.1
 
 #notifications:
 #  slack:
@@ -17,7 +26,7 @@ env:
 
 before_install:
   - sudo apt-get update -qq
-  - DEBIAN_FRONTEND=noninteractive sudo apt-get upgrade -yq
+#  - DEBIAN_FRONTEND=noninteractive sudo apt-get upgrade -yq
   - sudo apt-get install curl
   # Avoid harmless (but annoying) warnings.
   - mkdir ~/.python-eggs

@@ -32,6 +32,10 @@ Available variables are listed below, along with default values (see `defaults/m
 After the playbook runs, the Aegir front-end site will be available, as will
 the Drush extensions (Provision, et. al.) that do the heavy lifting.
 
+## Troubleshooting
+
+ssh-keygen -f "/home/devekko/.ssh/known_hosts" -R valkyrie.local
+
 ## License
 
 MIT / BSD

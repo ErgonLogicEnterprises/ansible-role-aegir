@@ -40,6 +40,7 @@
     state: directory
     owner: "{{ aegir_user }}"
     group: "{{ aegir_user }}"
+
 - name: Clone Provision
   git:
     repo: "{{ aegir_provision_repo }}"
@@ -49,6 +50,7 @@
     update: "{{ aegir_provision_update }}"
   sudo: yes
   sudo_user: "{{ aegir_user }}"
+
 - name: Clear Drush cache for Provision extension
   command: drush @none cc drush
   args:

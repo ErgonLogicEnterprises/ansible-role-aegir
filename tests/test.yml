@@ -5,6 +5,7 @@
     # Use default log file size so Travis CI VM allows MySQL restart.
     - mysql_innodb_log_file_size: "5M"
   roles:
-    - geerlingguy.mysql
-    - getvalkyrie.drush
-    - ansible-role-aegir
+    - role: geerlingguy.mysql
+      become: yes
+    - role: getvalkyrie.drush
+    - role: ansible-role-aegir

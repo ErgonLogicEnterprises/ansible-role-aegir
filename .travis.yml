@@ -47,6 +47,9 @@ install:
   - "curl https://raw.githubusercontent.com/ErgonLogicEnterprises/ansible-bootstrap/master/install-ansible-ppa.sh | sudo /bin/sh"
   # Add ansible.cfg to pick up roles path.
   # - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
+  - ansible --version
+
+  - ansible-galaxy --help
 
   # Install required dependencies.
   - "sudo ansible-galaxy install --force -r tests/requirements.yml"

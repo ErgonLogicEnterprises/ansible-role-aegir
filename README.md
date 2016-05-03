@@ -43,7 +43,10 @@ sudo ansible-galaxy install -r /vagrant/tests/requirements.yml
 
 sudo ansible-playbook -i tests/inventory tests/test.yml --connection=local
 
-ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+sudo ansible-playbook -i /vagrant/tests/inventory /vagrant/tests/test.yml --connection=local --sudo
+
+ansible-playbook -i /vagrant/tests/inventory /vagrant/tests/test.yml --connection=local --sudo | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+
 
 travis Idempotence
 

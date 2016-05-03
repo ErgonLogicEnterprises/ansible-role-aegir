@@ -50,7 +50,7 @@ install:
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 
   # Install required dependencies.
-  - sudo ansible-galaxy install -r /vagrant/tests/requirements.yml
+  - sudo ansible-galaxy install -r tests/requirements.yml
 
 script:
   # Check the role/playbook's syntax.

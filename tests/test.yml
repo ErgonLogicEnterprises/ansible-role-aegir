@@ -15,5 +15,9 @@
       become_user: root
       become: yes
       become_method: sudo
+      mysql_root_password_update: yes
+      mysql_root_username: root
+      mysql_root_password: root
+      mysql_root_password_update: yes
     - role: getvalkyrie.drush
     - role: ansible-role-aegir

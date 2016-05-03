@@ -1,0 +1,8 @@
+---
+
+- name: geerlingguy.mysql
+  src: http://github.com/geerlingguy/ansible-role-mysql
+  scm: git
+- name: getvalkyrie.drush
+  src: http://github.com/ErgonLogicEnterprises/ansible-role-drush
+  scm: git

@@ -36,6 +36,20 @@ the Drush extensions (Provision, et. al.) that do the heavy lifting.
 
 ssh-keygen -f "/home/devekko/.ssh/known_hosts" -R valkyrie.local
 
+inside VM
+
+vagrant ssh
+sudo ansible-galaxy install -r /vagrant/tests/requirements.yml
+
+sudo ansible-playbook -i tests/inventory tests/test.yml --connection=local
+
+ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+
+travis Idempotence
+
+ansible-playbook aegir3-playbook.yml --ask-become-pass -i ~/ansible_hosts -vvvv | grep -q 'changed=0.*failed=0' && (echo 'Idempotence test: pass' && exit 0) || (echo 'Idempotence test: fail' && exit 1)
+
+
 ## License
 
 MIT / BSD

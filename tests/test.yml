@@ -4,6 +4,8 @@
   vars:
     # Use default log file size so Travis CI VM allows MySQL restart.
     - mysql_innodb_log_file_size: "5M"
+    - mysql_root_username: root
+    - mysql_root_password: root
   roles:
     - role: geerlingguy.mysql
       become: yes

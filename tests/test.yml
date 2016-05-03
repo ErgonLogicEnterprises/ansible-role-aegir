@@ -13,5 +13,6 @@
   roles:
     - role: geerlingguy.mysql
       become: yes
+      become_method: su
     - role: getvalkyrie.drush
     - role: ansible-role-aegir
